@@ -21,7 +21,7 @@
                 <category android:name="android.intent.category.BROWSABLE" />
 
                 <data android:host="repos" />
-                <data android:scheme="test" />
+                <data android:scheme="testapp" />
             </intent-filter>
         </activity>
         <activity android:name=".MainActivity">
