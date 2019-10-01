@@ -18,6 +18,9 @@ import org.w3c.dom.Text;
 
 import java.net.CookieHandler;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import retrofit2.Call;
@@ -115,6 +118,12 @@ public class ShowRepoActivity extends AppCompatActivity {
                     GithubUserRepoData repoData = response.body()[i];
                     my.dataList.add(repoData);
                 }
+                Collections.sort(my.dataList, new Comparator<GithubUserRepoData>() {
+                    @Override
+                    public int compare(GithubUserRepoData repoA, GithubUserRepoData repoB) {
+                        return repoB.stargazersCount - repoA.stargazersCount;
+                    }
+                });
                 my.adapter.notifyDataSetChanged();
             } catch (Exception exc) {
 

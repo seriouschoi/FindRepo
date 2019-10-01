@@ -15,7 +15,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClickShowRepo(View view) {
-        String url = "test://repos/tom";
+        String url = "test://repos/google";
         Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         this.startActivity(intent);
     }
